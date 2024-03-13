@@ -10,13 +10,6 @@ public class Cliente {
 	
 
 	
-	public Reserva[] getReservas() {
-		return reservas;
-	}
-	public void setReservas(Reserva reservas) {
-		this.reservas[qtdReservas] = reservas;
-		qtdReservas++;
-	}
 	public String getCpf() {
 		return cpf;
 	}
@@ -40,6 +33,11 @@ public class Cliente {
 	}
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
+	}
+	
+	public void reservarIda( Reserva reserva ) {
+		this.reservas[qtdReservas] = reserva;
+		qtdReservas++;
 	}
 	
 	
