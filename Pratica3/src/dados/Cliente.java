@@ -34,11 +34,33 @@ public class Cliente {
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
-	
+	public Reserva[] getReservas() {
+		return reservas;
+	}	
+	public int getQtdReservas() {
+		return qtdReservas;
+	}
+	public void setQtdReservas(int qtdReservas) {
+		this.qtdReservas = qtdReservas;
+	}
 	public void reservarIda( Reserva reserva ) {
 		this.reservas[qtdReservas] = reserva;
 		qtdReservas++;
 	}
+	
+	public void reservarVolta( Reserva ida, Reserva volta ) {
+		ida.setIdaEvolta(true);
+		ida.setVolta(volta);
+	}
+	
+	public String toString() {
+        String cliente = "";
+        cliente += "CPF: " + this.cpf + "\n";
+        cliente += "Nome: " + this.nome + "\n";
+        cliente += "Endereco: " + this.endereco + "\n";
+        cliente += "Telefone: " + this.telefone + "\n";
+        return cliente;
+    }
 	
 	
 }

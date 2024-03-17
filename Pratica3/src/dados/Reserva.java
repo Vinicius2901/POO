@@ -10,7 +10,7 @@ public class Reserva {
 	private int poltrona;
 	private Cidade origem;
 	private Cidade destino;
-	private boolean volta;
+	private Reserva volta;
 	
 	
 	public int getNumReserva() {
@@ -67,23 +67,31 @@ public class Reserva {
 	public void setDestino(Cidade destino) {
 		this.destino = destino;
 	}
-	public boolean isVolta() {
+	public Reserva isVolta() {
 		return volta;
 	}
-	public void setVolta(boolean volta) {
+	public void setVolta(Reserva volta) {
 		this.volta = volta;
 	}
 	
 	@Override
 	public String toString() {
-		return "Reserva [numReserva=" + numReserva + ", dataVoo=" + dataVoo + ", horaVoo=" + horaVoo + ", preco="
-				+ preco + ", classeVoo=" + classeVoo + ", idaEvolta=" + idaEvolta + ", poltrona=" + poltrona
-				+ ", origem=" + origem + ", destino=" + destino + ", volta=" + volta + "]";
-	}
-	
-	
-	
-	
-	
+
+        String reserva = "";
+        reserva += "Numero Reserva: " + this.numReserva + "\n";
+        reserva += "Origem: " + this.origem.toString();
+        reserva += "Destino: " + this.destino.toString();
+        reserva += "Data do voo: " + this.dataVoo + "\n";
+        reserva += "Hora do voo: " + this.horaVoo + "\n";
+        reserva += "Preco: " + this.preco + "\n";
+        reserva += "Classe do voo: " + this.classeVoo + "\n";
+        reserva += "Poltrona: " + this.poltrona + "\n";
+
+        if (this.volta != null) {
+            reserva += this.volta.toString();
+        }
+
+        return reserva;
+    }
 	
 }
