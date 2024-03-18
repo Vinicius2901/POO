@@ -78,7 +78,7 @@ public class Reserva {
 	public String toString() {
 
         String reserva = "";
-        reserva += "Numero Reserva: " + this.numReserva + "\n";
+        reserva += "\nNumero Reserva: " + this.numReserva + "\n";
         reserva += "Origem: " + this.origem.toString();
         reserva += "Destino: " + this.destino.toString();
         reserva += "Data do voo: " + this.dataVoo + "\n";

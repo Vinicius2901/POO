@@ -42,35 +42,46 @@ public class ReservaPassagem {
 	}
 	
 	public void reservarIda( Cliente cliente, Reserva reserva ) {
-		reserva.setNumReserva( numReservas );
-		numReservas++;
-		cliente.reservarIda(reserva);
+		
+		if( buscaCliente(cliente.getCpf()) != null ) {
+			reserva.setNumReserva( numReservas );
+			numReservas++;
+			cliente.reservarIda(reserva);
+		}
+		else {
+			System.out.println("Cliente nao cadastrado");
+		}
 	}
 	
 	public void reservarVolta(Cliente cliente, Reserva ida, Reserva volta) {
-
-        ida.setNumReserva(this.numReservas);
-        this.numReservas++;
-
-        volta.setNumReserva(this.numReservas);
-        this.numReservas++;
-
-        cliente.reservarVolta(ida, volta);
+		
+		if( buscaCliente(cliente.getCpf()) != null ) {
+	        ida.setNumReserva(this.numReservas);
+	        this.numReservas++;
+	
+	        volta.setNumReserva(this.numReservas);
+	        this.numReservas++;
+	
+	        cliente.reservarVolta(ida, volta);
+		}
+		else {
+			System.out.println("Cliente nao cadastrado");
+		}
     }
 	
 	public Cliente buscaCliente( String cpf ) {
 		for( int i = 0; i < numClientes; i++ ) {
-			if( this.listaDeClientes[i].getCpf() == cpf ) {
+			if( cpf.equals(this.listaDeClientes[i].getCpf()) ) {
 				return this.listaDeClientes[i];
 			}
 		}
 		return null;
 	}
 	
-	public Reserva[] mostrarReservas( String cpfCliente ) {
+	public Reserva mostrarReservas( String cpfCliente, int index ) {
 		Cliente cliente = buscaCliente( cpfCliente );
 		if( cliente != null ) {
-			return cliente.getReservas();
+			return cliente.getReservas( index );
 		}
 		return null;
 	}

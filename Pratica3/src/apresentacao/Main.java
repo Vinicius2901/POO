@@ -35,14 +35,12 @@ public class Main {
                 break;
             case 2:
                 cadastrarCliente();
-                mostrarClientes();
                 break;
             case 3:
                 mostrarReservas();
                 break;
             case 4:
                 cadastrarCidade();
-                mostrarCidades();
                 break;
             default:
                 System.out.println("Opcao invalida");
@@ -190,7 +188,7 @@ public class Main {
 		Cliente cliente = new Cliente();
 		cliente = escolherCliente();
 		for( int i = 0; i < cliente.getQtdReservas(); i++ ) {
-			System.out.println(reservaPassagem.mostrarReservas(cliente.getCpf()));
+			System.out.println( reservaPassagem.mostrarReservas(cliente.getCpf(), i) );
 		}
 	}
 }

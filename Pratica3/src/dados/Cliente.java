@@ -34,14 +34,11 @@ public class Cliente {
 	public void setTelefone(int telefone) {
 		this.telefone = telefone;
 	}
-	public Reserva[] getReservas() {
-		return reservas;
+	public Reserva getReservas( int index ) {
+		return reservas[index];
 	}	
 	public int getQtdReservas() {
 		return qtdReservas;
-	}
-	public void setQtdReservas(int qtdReservas) {
-		this.qtdReservas = qtdReservas;
 	}
 	public void reservarIda( Reserva reserva ) {
 		this.reservas[qtdReservas] = reserva;
@@ -51,6 +48,18 @@ public class Cliente {
 	public void reservarVolta( Reserva ida, Reserva volta ) {
 		ida.setIdaEvolta(true);
 		ida.setVolta(volta);
+		this.reservas[qtdReservas] = ida;
+		qtdReservas ++;
+	}
+	
+	public boolean equals( Object o ) {
+		if( o instanceof Cliente ) {
+			Cliente c = (Cliente) o;
+			if( c.getCpf().equals(this.getCpf())) {
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public String toString() {
