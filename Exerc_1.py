@@ -18,7 +18,7 @@ class Veiculo:
         return "Nome: {} \nMarca: {} \nModelo: {} \nAno: {}".format(self.nome, self.marca, self.modelo, self.ano)
     
 c = Veiculo()
-c.nome = "Corsa"
+c.setNome("Corsa")
 c.marca = "GM"
 c.modelo = "GT"
 c.ano = 2000
