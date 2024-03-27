@@ -51,5 +51,13 @@ public class Animal {
 		return comprimento * largura;
 	}
 	
+	public String toString() {
+		String animal = "";
+		animal += "Nome: " + nome;
+		animal += " Cor: " + cor;
+		animal += " Especie: " + especie;
+		animal += " Idade: " + idade;
+		return animal;
+	}
 	
 }
