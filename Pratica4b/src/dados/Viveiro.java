@@ -10,8 +10,7 @@ public class Viveiro {
 		this.animais = new Animal[maxAnimais];
 		quantAnimais = 0;
 	}
-	
-	
+
 	public String getNome() {
 		return nome;
 	}
@@ -53,7 +52,7 @@ public class Viveiro {
 	}
 
 	public boolean adicionaAnimal( Animal animal ) {
-		if( espacoDisponivel() >= (animal.calculaEspacoOcupado() * 0.7) ) {
+		if( (espacoDisponivel() * 0.7) >= animal.calculaEspacoOcupado() ) {
 			if( !(animal instanceof Peixe) ) {
 				animais[quantAnimais] = animal;
 				quantAnimais++;

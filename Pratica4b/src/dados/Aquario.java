@@ -30,7 +30,7 @@ public class Aquario extends Viveiro {
 	}
 	
 	public boolean adicionaAnimal( Animal animal ) {
-		if( espacoDisponivel() >= (animal.calculaEspacoOcupado() * 0.7) ) {
+		if( (espacoDisponivel() * 0.7) >= animal.calculaEspacoOcupado() ) {
 			if( animal instanceof Peixe ) {
 				Peixe p = (Peixe) animal;
 				if((p.getTemperaturaIdeal() - temperatura < -3) || (p.getTemperaturaIdeal() - temperatura > 3)) { 
