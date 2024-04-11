@@ -1,6 +1,8 @@
 package dados;
 
-public class Pessoa {
+import java.util.Objects;
+
+public class Pessoa implements Comparable<Pessoa> {
 	private String nome;
 	private int idade;
 	private String cpf;
@@ -32,8 +34,28 @@ public class Pessoa {
 	
 	public String toString() {
 		String pessoa = "";
-		pessoa += "- " + nome + ", " + idade + ", " + cpf + ", " + cidade;
+		pessoa += "- " + nome + ", " + idade + ", " + cpf + ", " + cidade + "\n";
 		return pessoa;
+	}
+	
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(cpf);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Pessoa))
+			return false;
+		Pessoa other = (Pessoa) obj;
+		return Objects.equals(cpf, other.cpf);
+	}
+	@Override
+	public int compareTo(Pessoa o) {
+		return this.nome.compareTo(o.nome);
 	}
 	
 }
