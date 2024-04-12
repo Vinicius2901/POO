@@ -19,6 +19,7 @@ public class Main {
 	}
 	
 	public static void main(String[] args) {
+		pessoas.listarPessoas();
 		int opt = -1;
 		while( opt != 0 ) {
 			imprimeMenu();
