@@ -1,9 +1,9 @@
 package dados;
 
-public class Aluno {
+public class Aluno implements Comparable<Aluno> {
 	private String nome;
 	private int idade;
-	private double notas[] = new double[5];
+	private Double notas[] = new Double[5];
 	public String getNome() {
 		return nome;
 	}
@@ -17,11 +17,11 @@ public class Aluno {
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
-	public double[] getNotas() {
+	public Double[] getNotas() {
 		return notas;
 	}
-	public void setNotas(double notas, int i) {
-		this.notas[i] = notas;
+	public void setNotas(Double[] notas) {
+		this.notas = notas;
 	}
 	
 	public double calcularMedia() {
@@ -36,6 +36,11 @@ public class Aluno {
 		String aluno = "";
 		aluno += nome + ", " + idade + ", " + calcularMedia();
 		return aluno;
+	}
+
+	@Override
+	public int compareTo(Aluno o) {
+		return Double.compare( this.calcularMedia(), o.calcularMedia() );
 	}
 	
 }

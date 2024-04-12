@@ -19,5 +19,11 @@ public class Equipe<Aluno> {
 		this.alunos = alunos;
 	}
 	
+	public String toString() {
+		String equipe = "";
+		equipe += nome + ": " + alunos;
+		return equipe;
+	}
+	
 	
 }
