@@ -55,12 +55,12 @@ public class Matriz<T> {
 		for( int i = 0; i < linhas; i++ ) {
 			for( int j = 0; j < colunas; j++ ) {
 				switch( quadrante ) {
-				case PRIMEIRO:
+				case SEGUNDO:
 					if( i <= linhas/2 && j > colunas/2 ) {
 						elemTemp.add(matriz.get(i).get(j));
 					}
 					break;
-				case SEGUNDO:
+				case PRIMEIRO:
 					if( i <= linhas/2 && j <= colunas/2 ) {
 						elemTemp.add(matriz.get(i).get(j));
 					}
